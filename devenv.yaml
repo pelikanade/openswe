@@ -1,0 +1,11 @@
+inputs:
+  devenv:
+    url: github:cachix/devenv/v2.1.2?dir=src/modules
+  infrastructure:
+    url: git+file:///home/nvirellia/Projects/flake?rev=f3a032813d93d722ca4a35aeff9e1fd91ec2d243
+  nixpkgs:
+    follows: infrastructure/nixpkgs
+
+# Only the Open SWE process resolves secrets, never devenv's Nix evaluation.
+secretspec:
+  enable: false
